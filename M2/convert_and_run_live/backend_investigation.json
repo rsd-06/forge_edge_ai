@@ -1,0 +1,38 @@
+{
+  "platform": "Raspberry Pi 5 Model B (BCM2712 Cortex-A76)",
+  "os": "Debian GNU/Linux 13 (Trixie) aarch64",
+  "python_version": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "backends": {
+    "pytorch": {
+      "available": true,
+      "version": "2.15.0+cpu",
+      "accelerator": "ARM NEON SIMD via OpenMP",
+      "model_path": "models/best.pt",
+      "status": "Validated Baseline (M1)",
+      "limitations": "High Python runtime overhead, larger memory footprint."
+    },
+    "onnxruntime": {
+      "available": true,
+      "version": "1.31.1",
+      "providers": [
+        "AzureExecutionProvider",
+        "CPUExecutionProvider"
+      ],
+      "accelerator": "Native ARM64 NEON Vector Execution",
+      "model_path": "models/optimized/best.onnx",
+      "status": "Selected Production Backend (M2)",
+      "empirical_speedup": "1.24x faster (185.9ms vs 231.3ms)",
+      "numerical_parity": "Max absolute difference: 2.29e-4"
+    },
+    "ncnn": {
+      "available": false,
+      "status": "Unavailable in Python 3.13.5 ARM64 wheel ecosystem",
+      "technical_notes": "Requires building NCNN C++ from source with CMake and Vulkan SDK. Not recommended for rapid production deployment without cross-compilation pipeline."
+    },
+    "tflite_int8": {
+      "available": false,
+      "status": "tflite_runtime wheels unavailable for Python 3.13 aarch64",
+      "technical_notes": "Full TensorFlow package exceeds 4GB RAM limits during installation and lacks native Debian 13 Python 3.13 binary wheels. Strictly avoiding false INT8 claims without validated model weights."
+    }
+  }
+}

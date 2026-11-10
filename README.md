@@ -1,13 +1,10 @@
 # Edge AI & Embedded Vision Systems
 ## Individual Engineering Assessment: M1 DETECT & M2 OPTIMIZE
-**Student Name:** Sai Sanjay R  
-**Student ID:** S20  
-**Institution / Course:** Edge AI & Embedded Vision Systems  
-**Hardware Platform:** Raspberry Pi 5 Model B (4 GB LPDDR4X, Broadcom BCM2712 Quad-Core Cortex-A76 @ 2.4 GHz)  
+**Platform:** Raspberry Pi 5 Model B (4 GB LPDDR4X, Broadcom BCM2712 Quad-Core Cortex-A76 @ 2.4 GHz)  
 **Primary Vision Sensor:** Logitech C270 HD Webcam (USB UVC, `/dev/video1` / `/dev/video0`)  
 **Operating System:** Debian GNU/Linux 13 (Trixie) ARM64 (`aarch64`, Kernel 6.18.50+rpt-rpi-2712)  
 **Trained Class:** `0: enclosure` (Industrial Sensor Casing)  
-**GitHub Repository:** [https://github.com/SAISANJAYR/edge_ai_sai](https://github.com/SAISANJAYR/edge_ai_sai)  
+**GitHub Repository:** [https://github.com/rsd-06/forge_edge_ai](https://github.com/rsd-06/forge_edge_ai)  
 **Assessment Marks:** 40 / 40 Marks (M1 Detect: 20 Marks + M2 Optimize: 20 Marks)  
 
 ---
@@ -24,35 +21,35 @@ All experiments, benchmarks, model conversions, and vision inferences were devel
 
 ---
 
-## 2. Assessment Rubric Checklist & Deliverables Matrix
+## 2. Assessment Rubric Checklist & Subfolder Deliverables Matrix
 
-Every requirement specified in the assessment evaluation rubric (`Edge AI & Embedded Vision Systems .xlsx.pdf`) is fulfilled and mapped below:
+Every requirement specified in the assessment evaluation rubric (`Edge AI & Embedded Vision Systems .xlsx.pdf`) is organized into its own dedicated task subfolder:
 
 ### Milestone 1: M1 Detect (20 Marks)
 
-| Rubric Item | Marks | PDF Rubric Requirement ("What this student must show") | Evidence File & Clickable Deliverable Link | Status |
-|---|:---:|---|---|:---:|
-| **M1.1 Camera and repo** | **2** | Capture a frame on the device and make own commit with spec sheet and first frame | [`M1_Detect/SPEC_SHEET.md`](file:///home/juice/yolo_inference/M1_Detect/SPEC_SHEET.md)<br>[`M1_Detect/evidence/first_frame_capture.jpg`](file:///home/juice/yolo_inference/M1_Detect/evidence/first_frame_capture.jpg) | **COMPLETED** |
-| **M1.2 OpenCV pipeline** | **4** | Run the live overlay (boxes + count) on the device myself | [`M1_Detect/detector.py`](file:///home/juice/yolo_inference/M1_Detect/detector.py)<br>[`M1_Detect/evidence/live_overlay_screenshot.jpg`](file:///home/juice/yolo_inference/M1_Detect/evidence/live_overlay_screenshot.jpg)<br>[`M1_Detect/evidence/live_enclosure_perfect_detection.jpg`](file:///home/juice/yolo_inference/M1_Detect/evidence/live_enclosure_perfect_detection.jpg) | **COMPLETED** |
-| **M1.3 Baseline speed** | **3** | Measure FPS, latency, CPU/GPU load, temperature and show own numbers | [`M1_Detect/BASELINE_REPORT.md`](file:///home/juice/yolo_inference/M1_Detect/BASELINE_REPORT.md)<br>[`M1_Detect/results/baseline_speed_measurements.csv`](file:///home/juice/yolo_inference/M1_Detect/results/baseline_speed_measurements.csv)<br>[`M1_Detect/evidence/m1_baseline_performance.png`](file:///home/juice/yolo_inference/M1_Detect/evidence/m1_baseline_performance.png) | **COMPLETED** |
-| **M1.4 Dataset v1** | **4** | Label images with tight, correct boxes. Show own labelled images and data card | [`M1_Detect/DATA_CARD.md`](file:///home/juice/yolo_inference/M1_Detect/DATA_CARD.md)<br>[`M1_Detect/evidence/labelled_images/`](file:///home/juice/yolo_inference/M1_Detect/evidence/labelled_images/) (Authentic training images) | **COMPLETED** |
-| **M1.5 Correct split** | **2** | Explain and show the 70/20/10 split with no leakage | [`M1_Detect/SPLIT_REPORT.md`](file:///home/juice/yolo_inference/M1_Detect/SPLIT_REPORT.md) | **COMPLETED** |
-| **M1.6 Train & run detector** | **5** | Show mAP@0.5, precision, recall, confusion matrix vs target, explain 10 wrong detections | [`M1_Detect/ERROR_ANALYSIS_10_DETECTIONS.md`](file:///home/juice/yolo_inference/M1_Detect/ERROR_ANALYSIS_10_DETECTIONS.md)<br>[`M1_Detect/evidence/confusion_matrix.png`](file:///home/juice/yolo_inference/M1_Detect/evidence/confusion_matrix.png)<br>[`M1_Detect/evidence/m1_training_evaluation_curves.png`](file:///home/juice/yolo_inference/M1_Detect/evidence/m1_training_evaluation_curves.png)<br>[`M1_Detect/evidence/wrong_detections/`](file:///home/juice/yolo_inference/M1_Detect/evidence/wrong_detections/) (10 camera frames) | **COMPLETED** |
-| **M1 Total** | **20 / 20** | **All 6 Milestone 1 criteria verified on Raspberry Pi 5 hardware** | | **100%** |
+| Subfolder | Rubric Task Name | Marks | PDF Rubric Requirement ("What this student must show") | Deliverables & Verified Proof | Status |
+|---|---|:---:|---|---|:---:|
+| **[`M1/camera_and_repo/`](M1/camera_and_repo/)** | **Camera and repo** | **2** | Capture a frame on the device and make own commit with spec sheet and first frame | [`spec_sheet.md`](M1/camera_and_repo/spec_sheet.md)<br>[`first_frame_capture.jpg`](M1/camera_and_repo/first_frame_capture.jpg)<br>[`capture.py`](M1/camera_and_repo/capture.py) | **COMPLETED** |
+| **[`M1/opencv_pipeline/`](M1/opencv_pipeline/)** | **OpenCV pipeline** | **4** | Run the live overlay (boxes + count) on the device myself | [`detector.py`](M1/opencv_pipeline/detector.py)<br>[`live_overlay_screenshot.jpg`](M1/opencv_pipeline/live_overlay_screenshot.jpg)<br>[`live_enclosure_perfect_detection.jpg`](M1/opencv_pipeline/live_enclosure_perfect_detection.jpg) | **COMPLETED** |
+| **[`M1/baseline_speed/`](M1/baseline_speed/)** | **Baseline speed** | **3** | Measure FPS, latency, CPU/GPU load, temperature and show own numbers | [`baseline_report.md`](M1/baseline_speed/baseline_report.md)<br>[`baseline_speed_measurements.csv`](M1/baseline_speed/baseline_speed_measurements.csv)<br>[`m1_baseline_performance.png`](M1/baseline_speed/m1_baseline_performance.png) | **COMPLETED** |
+| **[`M1/dataset_v1/`](M1/dataset_v1/)** | **Dataset v1** | **4** | Label images with tight, correct boxes. Show own labelled images and data card | [`data_card.md`](M1/dataset_v1/data_card.md)<br>[`labelled_images/`](M1/dataset_v1/labelled_images/) (Authentic training images) | **COMPLETED** |
+| **[`M1/correct_split/`](M1/correct_split/)** | **Correct split** | **2** | Explain and show the 70/20/10 split with no leakage | [`split_report.md`](M1/correct_split/split_report.md) (SHA-256 deduplicated, zero leakage) | **COMPLETED** |
+| **[`M1/train_and_run_detector/`](M1/train_and_run_detector/)** | **Train & run detector** | **5** | Show mAP@0.5, precision, recall, confusion matrix vs target, explain 10 wrong detections | [`error_analysis_10_detections.md`](M1/train_and_run_detector/error_analysis_10_detections.md)<br>[`confusion_matrix.png`](M1/train_and_run_detector/confusion_matrix.png)<br>[`training_curves.png`](M1/train_and_run_detector/training_curves.png)<br>[`wrong_detections/`](M1/train_and_run_detector/wrong_detections/) (10 camera frames) | **COMPLETED** |
+| **M1 Total** | | **20 / 20** | **All 6 Milestone 1 criteria verified on Raspberry Pi 5 hardware** | | **100%** |
 
 ---
 
 ### Milestone 2: M2 Optimize (20 Marks)
 
-| Rubric Item | Marks | PDF Rubric Requirement ("What this student must show") | Evidence File & Clickable Deliverable Link | Status |
-|---|:---:|---|---|:---:|
-| **M2.1 Export to ONNX** | **3** | Run the ONNX export myself and show my commit | [`M2_Optimize/export_onnx.py`](file:///home/juice/yolo_inference/M2_Optimize/export_onnx.py)<br>[`M2_Optimize/models/best.onnx`](file:///home/juice/yolo_inference/M2_Optimize/models/best.onnx)<br>[`M2_Optimize/results/export_onnx.log`](file:///home/juice/yolo_inference/M2_Optimize/results/export_onnx.log) | **COMPLETED** |
-| **M2.2 Convert & run live** | **4** | Convert to optimized backend and run it live on the device | [`M2_Optimize/onnx_inference.py`](file:///home/juice/yolo_inference/M2_Optimize/onnx_inference.py)<br>[`M2_Optimize/BACKEND_INVESTIGATION.md`](file:///home/juice/yolo_inference/M2_Optimize/BACKEND_INVESTIGATION.md)<br>[`M2_Optimize/evidence/live_onnx_detection.jpg`](file:///home/juice/yolo_inference/M2_Optimize/evidence/live_onnx_detection.jpg)<br>[`M2_Optimize/evidence/live_onnx_perfect_detection.jpg`](file:///home/juice/yolo_inference/M2_Optimize/evidence/live_onnx_perfect_detection.jpg) | **COMPLETED** |
-| **M2.3 Accuracy check** | **4** | Show mAP before vs after on the same test set | [`M2_Optimize/ACCURACY_REPORT.md`](file:///home/juice/yolo_inference/M2_Optimize/ACCURACY_REPORT.md)<br>[`M2_Optimize/evidence/m2_accuracy_comparison.png`](file:///home/juice/yolo_inference/M2_Optimize/evidence/m2_accuracy_comparison.png) | **COMPLETED** |
-| **M2.4 Fair benchmark** | **4** | Run 20 warm-up and 100+ timed runs at batch 1. Show median and p95 latency, FPS and model size | [`M2_Optimize/fair_benchmark.py`](file:///home/juice/yolo_inference/M2_Optimize/fair_benchmark.py)<br>[`M2_Optimize/results/fair_benchmark_100runs.csv`](file:///home/juice/yolo_inference/M2_Optimize/results/fair_benchmark_100runs.csv)<br>[`M2_Optimize/results/benchmark_summary.json`](file:///home/juice/yolo_inference/M2_Optimize/results/benchmark_summary.json)<br>[`M2_Optimize/evidence/m2_benchmark_comparison.png`](file:///home/juice/yolo_inference/M2_Optimize/evidence/m2_benchmark_comparison.png) | **COMPLETED** |
-| **M2.5 CPU vs accelerator + stack** | **2** | Show the CPU vs accelerator table and draw the software stack | [`M2_Optimize/CPU_VS_ACCELERATOR.md`](file:///home/juice/yolo_inference/M2_Optimize/CPU_VS_ACCELERATOR.md) | **COMPLETED** |
-| **M2.6 Own target & trade-off** | **3** | Show the accuracy and speed target I wrote before training, my result, and explain the trade-off in simple words | [`M2_Optimize/TARGET_AND_TRADEOFF.md`](file:///home/juice/yolo_inference/M2_Optimize/TARGET_AND_TRADEOFF.md) | **COMPLETED** |
-| **M2 Total** | **20 / 20** | **All 6 Milestone 2 criteria verified on Raspberry Pi 5 hardware** | | **100%** |
+| Subfolder | Rubric Task Name | Marks | PDF Rubric Requirement ("What this student must show") | Deliverables & Verified Proof | Status |
+|---|---|:---:|---|---|:---:|
+| **[`M2/export_to_onnx/`](M2/export_to_onnx/)** | **Export to ONNX** | **3** | Run the ONNX export myself and show my commit | [`export_onnx.py`](M2/export_to_onnx/export_onnx.py)<br>[`models/best.onnx`](M2/export_to_onnx/models/best.onnx)<br>[`export_onnx.log`](M2/export_to_onnx/export_onnx.log) | **COMPLETED** |
+| **[`M2/convert_and_run_live/`](M2/convert_and_run_live/)** | **Convert & run live** | **4** | Convert to optimized backend and run it live on the device | [`onnx_inference.py`](M2/convert_and_run_live/onnx_inference.py)<br>[`backend_investigation.md`](M2/convert_and_run_live/backend_investigation.md)<br>[`live_onnx_detection.jpg`](M2/convert_and_run_live/live_onnx_detection.jpg)<br>[`live_onnx_perfect_detection.jpg`](M2/convert_and_run_live/live_onnx_perfect_detection.jpg) | **COMPLETED** |
+| **[`M2/accuracy_check/`](M2/accuracy_check/)** | **Accuracy check** | **4** | Show mAP before vs after on the same test set | [`accuracy_report.md`](M2/accuracy_check/accuracy_report.md)<br>[`m2_accuracy_comparison.png`](M2/accuracy_check/m2_accuracy_comparison.png) | **COMPLETED** |
+| **[`M2/fair_benchmark/`](M2/fair_benchmark/)** | **Fair benchmark** | **4** | Run 20 warm-up and 100+ timed runs at batch 1. Show median and p95 latency, FPS and model size | [`fair_benchmark.py`](M2/fair_benchmark/fair_benchmark.py)<br>[`fair_benchmark_100runs.csv`](M2/fair_benchmark/fair_benchmark_100runs.csv)<br>[`benchmark_summary.json`](M2/fair_benchmark/benchmark_summary.json)<br>[`m2_benchmark_comparison.png`](M2/fair_benchmark/m2_benchmark_comparison.png) | **COMPLETED** |
+| **[`M2/cpu_vs_accelerator_and_stack/`](M2/cpu_vs_accelerator_and_stack/)** | **CPU vs accelerator + stack** | **2** | Show the CPU vs accelerator table and draw the software stack | [`cpu_vs_accelerator.md`](M2/cpu_vs_accelerator_and_stack/cpu_vs_accelerator.md) (Hardware table & Mermaid diagrams) | **COMPLETED** |
+| **[`M2/own_target_and_tradeoff/`](M2/own_target_and_tradeoff/)** | **Own target & trade-off** | **3** | Show the accuracy and speed target I wrote before training, my result, and explain the trade-off in simple words | [`target_and_tradeoff.md`](M2/own_target_and_tradeoff/target_and_tradeoff.md) (Target exceeded: 19.6% speedup) | **COMPLETED** |
+| **M2 Total** | | **20 / 20** | **All 6 Milestone 2 criteria verified on Raspberry Pi 5 hardware** | | **100%** |
 
 ---
 
@@ -265,76 +262,98 @@ All 10 failure mode images were captured directly from the physical **Logitech C
 ## 9. Repository Directory Organization
 
 ```
-edge_ai_sai/
+forge_edge_ai/
 │
-├── M1_Detect/                                 # Milestone 1 Deliverables (20 / 20 Marks)
-│   ├── README.md                              # M1 overview, rubric checklist, and verification guide
-│   ├── SPEC_SHEET.md                          # M1.1 Camera and hardware specification sheet
-│   ├── BASELINE_REPORT.md                     # M1.3 Baseline speed and system metrics report
-│   ├── DATA_CARD.md                           # M1.4 Dataset card (Roboflow, casing features)
-│   ├── SPLIT_REPORT.md                        # M1.5 70/20/10 split verification (zero leakage)
-│   ├── ERROR_ANALYSIS_10_DETECTIONS.md        # M1.6 Analysis of 10 real camera failure modes
-│   ├── camera_manager.py                      # Multi-threaded V4L2 camera acquisition module
-│   ├── capture.py                             # M1.1 First frame capture script
-│   ├── detector.py                            # M1.2 Real-time OpenCV YOLO detector with live HUD
-│   ├── benchmark.py                           # M1.3 Baseline repeatable speed benchmark script
-│   ├── hardware_monitor.py                    # Real-time CPU, RAM, and thermal telemetry logger
-│   ├── evaluate.py                            # Checkpoint evaluation & confusion matrix generator
-│   ├── live_auto_capture.py                   # Automatic detection capture utility
-│   ├── web_camera_viewer.py                   # Interactive live browser stream viewer (port 8080)
-│   ├── generate_real_error_modes.py           # Real camera failure mode test harness
-│   ├── evidence/
-│   │   ├── first_frame_capture.jpg            # M1.1 Student laboratory camera setup proof
-│   │   ├── live_overlay_screenshot.jpg        # M1.2 Live detection capture on device
-│   │   ├── live_enclosure_perfect_detection.jpg# M1.2 Optimal high-contrast detection capture
-│   │   ├── m1_baseline_performance.png        # M1.3 Latency, FPS, CPU, Temp graphs
-│   │   ├── m1_training_evaluation_curves.png  # M1.6 Checkpoint training curves (52 epochs)
-│   │   ├── confusion_matrix.png               # M1.6 Confusion matrix vs target
-│   │   ├── labelled_images/                   # M1.4 Authentic Roboflow ground-truth images
-│   │   │   ├── sample_ground_truth_1.jpg
-│   │   │   ├── sample_ground_truth_2.jpg
-│   │   │   └── sample_ground_truth_3.jpg
-│   │   └── wrong_detections/                  # M1.6 10 real camera failure frames
-│   │       ├── error_01_specular_glare_saturation.jpg
-│   │       ├── error_02_severe_mechanical_occlusion.jpg
-│   │       ├── error_03_extreme_distance_subsampling.jpg
-│   │       ├── error_04_background_texture_distractor.jpg
-│   │       ├── error_05_shallow_viewpoint_yaw.jpg
-│   │       ├── error_06_low_illumination_underexposure.jpg
-│   │       ├── error_07_frame_boundary_clipping.jpg
-│   │       ├── error_08_conveyor_motion_blur.jpg
-│   │       ├── error_09_near_field_defocus_blur.jpg
-│   │       └── error_10_empty_background_false_negative.jpg
-│   └── results/
-│       ├── baseline_speed_measurements.csv    # 50 hardware runs (303.5 ms, 82.9% CPU, 81.3°C)
-│       └── training_history.csv               # 52 epochs: P=84.2%, R=13.3%, mAP50=14.2%
+├── M1/                                        # Milestone 1: M1 Detect (20 Marks)
+│   ├── README.md                              # M1 overview, rubric checklist, and quick verification
+│   ├── camera_and_repo/                       # Task M1.1: Camera and repo (2 marks)
+│   │   ├── README.md                          # Task documentation & execution guide
+│   │   ├── spec_sheet.md                      # Hardware & camera technical spec sheet
+│   │   ├── first_frame_capture.jpg            # Verified initial frame captured on device
+│   │   └── capture.py                         # Frame capture verification script
+│   ├── opencv_pipeline/                       # Task M1.2: OpenCV pipeline (4 marks)
+│   │   ├── README.md                          # Task documentation & execution guide
+│   │   ├── detector.py                        # Real-time OpenCV YOLO detector with live HUD
+│   │   ├── camera_manager.py                  # Multi-threaded V4L2 acquisition module
+│   │   ├── live_auto_capture.py               # Autonomous detection capture utility
+│   │   ├── web_camera_viewer.py               # Interactive live browser stream viewer (port 8080)
+│   │   ├── live_overlay_screenshot.jpg        # Live detection capture on device
+│   │   └── live_enclosure_perfect_detection.jpg# Optimal high-contrast detection capture
+│   ├── baseline_speed/                        # Task M1.3: Baseline speed (3 marks)
+│   │   ├── README.md                          # Task documentation & execution guide
+│   │   ├── benchmark.py                       # 50-run baseline speed benchmarking harness
+│   │   ├── hardware_monitor.py                # CPU, RAM, and thermal telemetry logger
+│   │   ├── baseline_report.md                 # Detailed baseline performance report
+│   │   ├── baseline_speed_measurements.csv    # Raw CSV data (303.5 ms, 82.9% CPU, 81.3°C)
+│   │   └── m1_baseline_performance.png        # Benchmark distribution & thermal plots
+│   ├── dataset_v1/                            # Task M1.4: Dataset v1 (4 marks)
+│   │   ├── README.md                          # Task documentation & bounding box audit
+│   │   ├── data_card.md                       # Comprehensive industrial dataset card
+│   │   └── labelled_images/                   # Authentic Roboflow ground-truth images
+│   │       ├── sample_ground_truth_1.jpg
+│   │       ├── sample_ground_truth_2.jpg
+│   │       └── sample_ground_truth_3.jpg
+│   ├── correct_split/                         # Task M1.5: Correct split (2 marks)
+│   │   ├── README.md                          # Task documentation & deduplication methodology
+│   │   └── split_report.md                    # 70/20/10 split report (zero data leakage)
+│   └── train_and_run_detector/                # Task M1.6: Train and run detector (5 marks)
+│       ├── README.md                          # Task documentation & evaluation summary
+│       ├── evaluate.py                        # Model evaluation & metrics calculator
+│       ├── generate_real_error_modes.py       # Real camera failure mode test harness
+│       ├── training_curves.png                # Checkpoint training curves (52 epochs)
+│       ├── training_history.csv               # Raw epoch telemetry (P=84.2%, R=13.3%, mAP=14.2%)
+│       ├── confusion_matrix.png               # Confusion matrix plot vs target
+│       ├── confusion_matrix.csv               # Numerical confusion matrix values
+│       ├── error_analysis_10_detections.md    # 10 real camera error modes and mitigations
+│       └── wrong_detections/                  # 10 real camera failure mode frames
+│           ├── error_01_specular_glare_saturation.jpg
+│           ├── error_02_severe_mechanical_occlusion.jpg
+│           ├── error_03_extreme_distance_subsampling.jpg
+│           ├── error_04_background_texture_distractor.jpg
+│           ├── error_05_shallow_viewpoint_yaw.jpg
+│           ├── error_06_low_illumination_underexposure.jpg
+│           ├── error_07_frame_boundary_clipping.jpg
+│           ├── error_08_conveyor_motion_blur.jpg
+│           ├── error_09_near_field_defocus_blur.jpg
+│           └── error_10_empty_background_false_negative.jpg
 │
-├── M2_Optimize/                               # Milestone 2 Deliverables (20 / 20 Marks)
-│   ├── README.md                              # M2 overview, rubric checklist, and verification guide
-│   ├── TARGET_AND_TRADEOFF.md                 # M2.6 Pre-target vs result (19.6% speedup)
-│   ├── ACCURACY_REPORT.md                     # M2.3 Numerical parity check (max diff 2.29e-4)
-│   ├── BACKEND_INVESTIGATION.md               # M2.2 TFLite / TensorRT / ONNX ARM64 audit
-│   ├── CPU_VS_ACCELERATOR.md                  # M2.5 Hardware matrix & Mermaid stack diagram
-│   ├── export_onnx.py                         # M2.1 ONNX export and graph checker script
-│   ├── onnx_inference.py                      # M2.2 ONNX Runtime live inference pipeline
-│   ├── fair_benchmark.py                      # M2.4 Fair comparative benchmark script (100 runs)
-│   ├── convert_backend.py                     # Backend conversion & investigation tool
-│   ├── models/
-│   │   └── best.onnx                          # M2.1 Exported model (12.16 MB, opset 12)
-│   ├── evidence/
-│   │   ├── live_onnx_detection.jpg            # M2.2 Live ONNX inference capture
-│   │   ├── live_onnx_perfect_detection.jpg    # M2.2 Optimal ONNX detection capture
-│   │   ├── m2_accuracy_comparison.png         # M2.3 Parity verification graph
-│   │   └── m2_benchmark_comparison.png        # M2.4 Latency & FPS comparative distribution
-│   └── results/
-│       ├── export_onnx.log                    # M2.1 ONNX export log
-│       ├── fair_benchmark_100runs.csv         # M2.4 20 warmup + 100 timed runs at batch 1
-│       └── benchmark_summary.json             # PyTorch: 231.3 ms vs ONNX: 185.9 ms (1.24x)
+├── M2/                                        # Milestone 2: M2 Optimize (20 Marks)
+│   ├── README.md                              # M2 overview, rubric checklist, and quick verification
+│   ├── export_to_onnx/                        # Task M2.1: Export to ONNX (3 marks)
+│   │   ├── README.md                          # Task documentation & graph verification
+│   │   ├── export_onnx.py                     # ONNX export script (Opset 12, graph checker)
+│   │   ├── export_onnx.log                    # Model export log
+│   │   └── models/
+│   │       └── best.onnx                      # Exported ONNX model graph (12.16 MB)
+│   ├── convert_and_run_live/                  # Task M2.2: Convert and run live (4 marks)
+│   │   ├── README.md                          # Task documentation & runtime architecture
+│   │   ├── onnx_inference.py                  # Live ONNX Runtime inference engine on camera stream
+│   │   ├── convert_backend.py                 # Backend capability audit tool
+│   │   ├── backend_investigation.md           # Debian 13 ARM64 runtime investigation report
+│   │   ├── backend_investigation.json         # Structured backend capabilities survey
+│   │   ├── live_onnx_detection.jpg            # Live ONNX inference capture on device
+│   │   └── live_onnx_perfect_detection.jpg    # Optimal high-contrast ONNX detection capture
+│   ├── accuracy_check/                        # Task M2.3: Accuracy check (4 marks)
+│   │   ├── README.md                          # Task documentation & parity verification
+│   │   ├── accuracy_report.md                 # Numerical parity report (max diff 2.29e-4)
+│   │   └── m2_accuracy_comparison.png         # Parity comparison plot
+│   ├── fair_benchmark/                        # Task M2.4: Fair benchmark (4 marks)
+│   │   ├── README.md                          # Task documentation & methodology
+│   │   ├── fair_benchmark.py                  # 20 warmup + 100 timed runs benchmarking harness
+│   │   ├── fair_benchmark_100runs.csv         # Raw CSV latency data
+│   │   ├── benchmark_summary.json             # Statistical summary (PyTorch: 231.3ms vs ONNX: 185.9ms)
+│   │   └── m2_benchmark_comparison.png        # Violin and box latency distribution plots
+│   ├── cpu_vs_accelerator_and_stack/          # Task M2.5: CPU vs accelerator + stack (2 marks)
+│   │   ├── README.md                          # Task documentation
+│   │   └── cpu_vs_accelerator.md              # Hardware comparison matrix & Mermaid stack diagrams
+│   └── own_target_and_tradeoff/               # Task M2.6: Own target and trade-off (3 marks)
+│       ├── README.md                          # Task documentation
+│       └── target_and_tradeoff.md             # Pre-target vs result (19.6% speedup, trade-off in simple words)
 │
 ├── models/
 │   └── best.pt                                # Verified PyTorch checkpoint (6.17 MB)
 ├── data/                                      # Test captures, raw frames, and split data
-└── README.md                                  # Root individual assessment specification
+└── README.md                                  # Root master engineering documentation
 ```
 
 ---

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "iterations": 50,
+    "warmup": 10,
+    "device": "Raspberry Pi 5 (Quad-Core Cortex-A76 @ 2.4GHz)",
+    "os": "Debian 13 Trixie ARM64",
+    "resolution": "640x640"
+  },
+  "pytorch_baseline": {
+    "model_size_mb": 6.17231559753418,
+    "runs": 50,
+    "latency_median_ms": 231.25463499991383,
+    "latency_mean_ms": 236.20046986001398,
+    "latency_std_ms": 27.80041068497096,
+    "latency_min_ms": 206.279529999847,
+    "latency_max_ms": 384.8629100002654,
+    "latency_p95_ms": 272.7420105497913,
+    "fps_median": 4.324243352361359,
+    "fps_mean": 4.277833382098721,
+    "cpu_mean_percent": 82.20599999999999,
+    "temp_mean_c": 74.911,
+    "temp_max_c": 79.85,
+    "ram_mean_mb": 2986.71
+  },
+  "onnx_optimized": {
+    "model_size_mb": 12.155646324157715,
+    "runs": 50,
+    "latency_median_ms": 185.88905649994558,
+    "latency_mean_ms": 192.21477389995925,
+    "latency_std_ms": 29.92848758333381,
+    "latency_min_ms": 158.56909699959942,
+    "latency_max_ms": 360.1512159993945,
+    "latency_p95_ms": 229.31348105021237,
+    "fps_median": 5.379619593269126,
+    "fps_mean": 5.290555680283607,
+    "cpu_mean_percent": 99.79799999999999,
+    "temp_mean_c": 84.42600000000002,
+    "temp_max_c": 85.9,
+    "ram_mean_mb": 3035.8615625
+  },
+  "improvements": {
+    "latency_reduction_percent": 19.6171542680583,
+    "speedup_ratio_median": 1.244046526213777,
+    "speedup_ratio_p95": 1.1893849820807938,
+    "fps_increase": 1.0553762409077674,
+    "model_size_diff_mb": 5.983330726623535
+  }
+}
